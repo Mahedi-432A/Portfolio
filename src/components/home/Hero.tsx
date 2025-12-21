@@ -14,7 +14,7 @@ const Hero = () => {
         <div className="flex-1 space-y-6 text-center md:text-left">
           <div className="animate-fade-in">
             <h2 className="text-xl md:text-2xl font-medium text-white">
-              Hello, I'm
+              Hello, I&apos;m
             </h2>
             <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-linear-to-r from-teal-400 to-cyan-400">
               {heroData.name}

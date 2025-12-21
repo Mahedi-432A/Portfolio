@@ -6,7 +6,7 @@ export const projectsData = [
     techStack: ["React", "Node.js", "Express", "MongoDB", "Redux"],
     githubLink: "https://github.com/yourusername/project1",
     liveLink: "https://project1.com",
-    image: "bg-blue-100", // আপাতত আমরা কালার ক্লাস ব্যবহার করছি ছবির বদলে
+    image: "https://sarabangla.net/wp-content/uploads/2025/12/Osman_Hadi.jpg", // আপাতত আমরা কালার ক্লাস ব্যবহার করছি ছবির বদলে
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const projectsData = [
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
     githubLink: "https://github.com/yourusername/project2",
     liveLink: "https://project2.com",
-    image: "bg-purple-100",
+    image: "https://sarabangla.net/wp-content/uploads/2025/12/Osman_Hadi.jpg",
   },
   {
     id: 3,
@@ -24,6 +24,6 @@ export const projectsData = [
     techStack: ["Next.js", "React", "Tailwind CSS"],
     githubLink: "https://github.com/yourusername/portfolio",
     liveLink: "https://yourportfolio.com",
-    image: "bg-green-100",
+    image: "https://sarabangla.net/wp-content/uploads/2025/12/Osman_Hadi.jpg",
   },
 ];

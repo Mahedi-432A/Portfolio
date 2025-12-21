@@ -1,2 +1,46 @@
 @import "tailwindcss";
-@tailwind utilities;
+
+@theme {
+  /* Fade In Animation */
+  --animate-fade-in: fade-in 1s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Blob Animation (এটা মিসিং ছিল, এখন যোগ করা হলো) */
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+}
+
+/* সাধারণ CSS স্টাইল */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+    /* ডার্ক থিম এর জন্য ডিফল্ট ব্যাকগ্রাউন্ড সেট করে দেওয়া ভালো */
+    background-color: #0f172a; /* slate-900 */
+}

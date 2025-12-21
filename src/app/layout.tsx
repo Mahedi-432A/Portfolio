@@ -25,7 +25,7 @@ export default function RootLayout({
         
         {/* এই children মানে হলো আমাদের অন্যান্য পেজগুলো (যেমন হোমপেজ) */}
         {/* Navbar এর হাইট যেহেতু h-16 (4rem), তাই আমরা pt-16 প্যাডিং দিচ্ছি যাতে কন্টেন্ট ন্যাপবারের নিচে ঢাকা না পড়ে */}
-        <main className="min-h-screen pt-16 flex flex-col">
+        <main className="min-h-screen flex flex-col">
            {children}
         </main>
         

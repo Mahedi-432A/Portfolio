@@ -1,10 +1,12 @@
-'use client'; // এটা খুবই জরুরি Next.js App Router এর জন্য
+'use client';
 
 import { contactData } from "@/data/contactData";
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState, FormEvent } from 'react';
+import { useState, useRef, FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null); // ফর্মের রেফারেন্স
 
   const [formData, setFormData] = useState({
     name: '',
@@ -20,13 +22,30 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    // Environment Variables থেকে ID গুলো নেওয়া
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }, 1000);
+    try {
+        // EmailJS এর মাধ্যমে ইমেইল পাঠানো
+        await emailjs.sendForm(serviceId, templateId, formRef.current!, {
+            publicKey: publicKey,
+        });
+
+        // সফল হলে
+        setIsSubmitting(false);
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+    } catch (error) {
+        // এরর হলে
+        console.error('FAILED...', error);
+        setIsSubmitting(false);
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,6 +62,8 @@ const Contact = () => {
           <div className="w-24 h-1 bg-linear-to-r from-teal-500 to-cyan-500 mx-auto mb-12"></div>
 
           <div className="grid md:grid-cols-2 gap-12">
+            
+            {/* Contact Info (Left Side) */}
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-6">
                 Let&apos;s Work Together
@@ -59,10 +80,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">Email</h4>
-                    <a
-                      href={`mailto:${contactData.email}`}
-                      className="text-teal-600 hover:text-teal-700 transition-colors"
-                    >
+                    <a href={`mailto:${contactData.email}`} className="text-teal-600 hover:text-teal-700 transition-colors">
                       {contactData.email}
                     </a>
                   </div>
@@ -74,10 +92,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 mb-1">Phone</h4>
-                    <a
-                      href={`tel:${contactData.phone}`}
-                      className="text-teal-600 hover:text-teal-700 transition-colors"
-                    >
+                    <a href={`tel:${contactData.phone}`} className="text-teal-600 hover:text-teal-700 transition-colors">
                       {contactData.phone}
                     </a>
                   </div>
@@ -95,16 +110,16 @@ const Contact = () => {
               </div>
             </div>
 
+            {/* Contact Form (Right Side) */}
             <div>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              {/* ref={formRef} যোগ করা হয়েছে */}
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Name
-                  </label>
+                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">Name</label>
                   <input
                     type="text"
                     id="name"
-                    name="name"
+                    name="name" // EmailJS এই name="name" দিয়ে ভ্যালু ধরবে
                     value={formData.name}
                     onChange={handleChange}
                     required
@@ -114,9 +129,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Email
-                  </label>
+                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
                   <input
                     type="email"
                     id="email"
@@ -130,9 +143,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Subject
-                  </label>
+                  <label htmlFor="subject" className="block text-sm font-semibold text-slate-700 mb-2">Subject</label>
                   <input
                     type="text"
                     id="subject"
@@ -146,9 +157,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
-                    Message
-                  </label>
+                  <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
                   <textarea
                     id="message"
                     name="message"
@@ -177,8 +186,13 @@ const Contact = () => {
                 </button>
 
                 {submitStatus === 'success' && (
-                  <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-center">
+                  <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-center animate-fade-in">
                     Message sent successfully! I&#39;ll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-center animate-fade-in">
+                    Something went wrong. Please try again later.
                   </div>
                 )}
               </form>

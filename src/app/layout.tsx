@@ -8,8 +8,28 @@ import Footer from "@/components/shared/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Portfolio built with Next.js and Tailwind CSS",
+  title: "MD Mahedi Hasan | MERN Stack Developer", // তোমার নাম দাও
+  description: "Portfolio of MD Mahedi Hasan - A passionate MERN Stack Developer & Competitive Programmer solving real-world problems.",
+  keywords: ["MERN Stack", "React", "Next.js", "Portfolio", "Web Developer", "Bangladesh"],
+  authors: [{ name: "MD Mahedi Hasan" }],
+
+  // সোশ্যাল মিডিয়াতে শেয়ার করলে যা দেখাবে
+  openGraph: {
+    title: "MD Mahedi Hasan | MERN Stack Developer",
+    description: "Check out my portfolio to see my projects and skills.",
+    url: "https://your-domain.com", // পরে লাইভ লিংক বসাবে
+    siteName: "MD Mahedi Hasan Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // আমরা একটা প্রিভিউ ইমেজ সেট করবো
+        width: 1200,
+        height: 630,
+        alt: "MD Mahedi Hasan Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

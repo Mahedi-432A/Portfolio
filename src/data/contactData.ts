@@ -1,7 +1,7 @@
 export const contactData = {
-  email: "mahim@example.com",
-  phone: "+880 1234 567890",
+  email: "mdmahedih038@gmail.com",
+  phone: "+8801966868548",
   address: "Dhaka, Bangladesh",
-  github: "https://github.com/yourusername",
-  linkedin: "https://linkedin.com/in/yourusername",
+  // github: "https://github.com/yourusername",
+  // linkedin: "https://linkedin.com/in/yourusername",
 };

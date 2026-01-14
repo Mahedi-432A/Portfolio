@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold bg-linear-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent inline-block">
-              John Doe
+              MD Mahedi Hasan
             </h3>
             <p className="text-slate-400 leading-relaxed">
               Building scalable and performant web applications with modern technologies. 
@@ -46,7 +46,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Connect</h4>
             <div className="flex gap-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/Mahedi-432A" 
                 target="_blank" 
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all duration-300"
@@ -54,7 +54,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/md-mahedi-hasan-806608372/" 
                 target="_blank" 
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all duration-300"
@@ -62,7 +62,7 @@ const Footer = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="mailto:example@mail.com" 
+                href="mailto:mdmahedih038@gmail.com" 
                 className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-teal-500 hover:text-white transition-all duration-300"
               >
                 <Mail size={20} />
@@ -77,7 +77,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm flex items-center gap-1">
-            © {currentYear} Made with <Heart size={16} className="text-red-500 fill-red-500" /> by John Doe
+            © {currentYear} Made with <Heart size={16} className="text-red-500 fill-red-500" /> by MD Mahedi Hasan
           </p>
           
           <button 

@@ -9,7 +9,7 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMTIxMjEiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzBoLTJ2LTJoMnYyem0wIDRoLTJ2LTJoMnYyem0wIDRoLTJ2LTJoMnYyem0wIDRoLTJ2LTJoMnYyem0wIDRoLTJ2LTJoMnYyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-20"></div>
 
-      <div className="container flex flex-col md:flex-row items-center justify-center gap-10 mx-auto px-6 py-10 z-10">
+      <div className="container flex flex-col md:flex-row items-center justify-center gap-10 mx-auto px-6 lg:py-10 md:py-26 py-32 z-10">
         {/* Text Content */}
         <div className="flex-1 space-y-6 text-center md:text-left">
           <div className="animate-fade-in">
@@ -30,7 +30,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex gap-4 justify-center md:justify-start">
             <a
-              href="https://github.com"
+              href="https://github.com/Mahedi-432A"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-teal-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
@@ -38,7 +38,7 @@ const Hero = () => {
               <Github size={20} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/md-mahedi-hasan-806608372/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-teal-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
@@ -46,7 +46,7 @@ const Hero = () => {
               <Linkedin size={20} />
             </a>
             <a
-              href="mailto:johndoe@example.com"
+              href="mailto:mdmahedih038@gmail.com"
               className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-teal-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
             >
               <Mail size={20} />

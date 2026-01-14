@@ -112,14 +112,13 @@ const Contact = () => {
 
             {/* Contact Form (Right Side) */}
             <div>
-              {/* ref={formRef} যোগ করা হয়েছে */}
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">Name</label>
                   <input
                     type="text"
                     id="name"
-                    name="name" // EmailJS এই name="name" দিয়ে ভ্যালু ধরবে
+                    name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required

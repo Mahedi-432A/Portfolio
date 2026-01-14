@@ -21,7 +21,6 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -51,8 +50,8 @@ const Navbar = () => {
               isScrolled ? 'text-slate-900' : 'text-white'
             }`}
           >
-            <span className="bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
-              John Doe
+            <span className="bg-linear-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">
+              MD Mahedi Hasan
             </span>
           </a>
 

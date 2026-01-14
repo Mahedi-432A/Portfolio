@@ -21,9 +21,9 @@ export const projectsData = [
     description:
       "A productivity tool for teams to manage tasks with drag-and-drop features, deadlines, and real-time updates.",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
-    githubLink: "https://github.com/yourusername/project2",
-    liveLink: "https://project2.com",
-    image: "https://sarabangla.net/wp-content/uploads/2025/12/Osman_Hadi.jpg",
+    githubLink: "https://github.com/Mahedi-432A/MIIU_Shuttle",
+    liveLink: "https://miiu-shuttle.vercel.app/",
+    image: "/ProjectMiuShuttle.png",
   },
   {
     id: 3,

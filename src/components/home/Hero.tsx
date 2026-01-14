@@ -79,10 +79,8 @@ const Hero = () => {
         {/* Image / Visual Content */}
         <div className="flex-1 flex justify-center">
           {/* আপাতত আমরা একটা স্টাইলিশ ডিভ ব্যবহার করছি ছবির বদলে */}
-          <div className="relative w-64 h-64 md:w-80 md:h-80 bg-linear-to-r from-teal-400 to-cyan-400 rounded-full flex items-center justify-center shadow-2xl animate-blob">
-            <span className="text-white text-9xl font-bold opacity-20">
-              Dev
-            </span>
+          <div className="relative w-64 h-64 md:w-80 md:h-80 bg-linear-to-r from-teal-400 to-cyan-400 rounded-full flex items-center justify-center shadow-2xl animate-blob border-2 border-slate-950">
+            <img src="/Profile.jpg" alt="Profile Picture" />
           </div>
         </div>
       </div>

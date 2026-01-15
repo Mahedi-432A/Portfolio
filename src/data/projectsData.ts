@@ -17,10 +17,18 @@ export const projectsData = [
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "MIU Shuttle (SmartSeat)",
     description:
-      "A productivity tool for teams to manage tasks with drag-and-drop features, deadlines, and real-time updates.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
+      "A real-time university shuttle booking system featuring instant seat updates, secure user authentication, and a comprehensive admin dashboard for managing bus schedules and notices.",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Socket.io",
+      "Tailwind CSS",
+      "Firebase",
+    ],
     githubLink: "https://github.com/Mahedi-432A/MIIU_Shuttle",
     liveLink: "https://miiu-shuttle.vercel.app/",
     image: "/ProjectMiuShuttle.png",

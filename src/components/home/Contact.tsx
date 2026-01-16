@@ -4,9 +4,10 @@ import { contactData } from "@/data/contactData";
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useState, useRef, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
-  const formRef = useRef<HTMLFormElement>(null); // ফর্মের রেফারেন্স
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -16,35 +17,46 @@ const Contact = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Environment Variables থেকে ID গুলো নেওয়া
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
     try {
-        // EmailJS এর মাধ্যমে ইমেইল পাঠানো
         await emailjs.sendForm(serviceId, templateId, formRef.current!, {
             publicKey: publicKey,
         });
 
-        // সফল হলে
         setIsSubmitting(false);
-        setSubmitStatus('success');
         setFormData({ name: '', email: '', subject: '', message: '' });
 
-        setTimeout(() => setSubmitStatus('idle'), 5000);
+        // ২. সফল হলে SweetAlert দেখানো
+        Swal.fire({
+          title: 'Success!',
+          text: 'Message sent successfully! I\'ll get back to you soon.',
+          icon: 'success',
+          confirmButtonText: 'Great!',
+          confirmButtonColor: '#0d9488',
+          background: '#ffffff',
+          color: '#0f172a'
+        });
+
     } catch (error) {
-        // এরর হলে
         console.error('FAILED...', error);
         setIsSubmitting(false);
-        setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus('idle'), 5000);
+
+        // ৩. এরর হলে SweetAlert দেখানো
+        Swal.fire({
+          title: 'Oops!',
+          text: 'Something went wrong. Please try again later.',
+          icon: 'error',
+          confirmButtonText: 'Close',
+          confirmButtonColor: '#ef4444',
+        });
     }
   };
 
@@ -183,17 +195,6 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-
-                {submitStatus === 'success' && (
-                  <div className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-center animate-fade-in">
-                    Message sent successfully! I&#39;ll get back to you soon.
-                  </div>
-                )}
-                {submitStatus === 'error' && (
-                  <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-center animate-fade-in">
-                    Something went wrong. Please try again later.
-                  </div>
-                )}
               </form>
             </div>
           </div>

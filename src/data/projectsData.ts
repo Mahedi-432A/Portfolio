@@ -35,12 +35,19 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "Portfolio Website",
+    title: "AnimeVerse",
     description:
-      "A personal portfolio website built with Next.js and Tailwind CSS to showcase skills and projects effectively.",
-    techStack: ["Next.js", "React", "Tailwind CSS"],
-    githubLink: "https://github.com/yourusername/portfolio",
-    liveLink: "https://yourportfolio.com",
-    image: "https://sarabangla.net/wp-content/uploads/2025/12/Osman_Hadi.jpg",
+      "A modern anime discovery platform featuring real-time data, smart search, and immersive details. Built with Next.js 15, TanStack Query, and Framer Motion for a high-performance user experience.",
+    techStack: [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Zustand",
+      "Framer Motion",
+    ],
+    githubLink: "https://github.com/Mahedi-432A/AnimeVerse",
+    liveLink: "https://anime-verse-azure.vercel.app/",
+    image: "/ProjectAnimeVerse.png",
   },
 ];

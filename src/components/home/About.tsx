@@ -7,12 +7,13 @@ const About = () => {
            <div className="w-24 h-1 bg-linear-to-r from-teal-500 to-cyan-500 mx-auto mb-12"></div>
 
           <p className="text-lg text-slate-700 leading-relaxed mb-6">
-            I am a passionate Computer Science student and a dedicated MERN Stack Developer. 
-            With a strong foundation in Competitive Programming using C and C++, I love solving complex algorithmic problems.
+            Hi there! 👋 I&apos;m a passionate Full Stack Developer specializing in the MERN Stack and Next.js. With a B.Sc. in Computer Science & Engineering, I combine strong theoretical foundations with practical expertise in building modern, high-performance web applications.
           </p>
-          <p className="text-lg text-slate-700 leading-relaxed">
-            My goal is to build scalable web applications that solve real-world problems. 
-            Currently, I am focused on mastering Next.js and advanced backend architecture to deliver high-performance solutions.
+          <p className="text-lg text-slate-700 leading-relaxed mb-6">
+            Currently, I am deeply focused on the TypeScript ecosystem to engineer type-safe and scalable solutions. My journey involves not just writing code, but crafting robust Software Architectures and System Designs. Whether it&lsquo;s developing complex platforms like Port & Trade Logistics Systems or rental solutions, I prioritize writing clean, maintainable code that drives efficiency.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed mb-6">
+            My goal is to build scalable systems and engineer hybrid solutions for complex real-world problems. When I&apos;m not coding, I&lsquo;m likely exploring new system design patterns or optimizing application performance.
           </p>
         </div>
       </div>

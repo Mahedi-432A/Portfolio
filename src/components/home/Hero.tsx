@@ -53,7 +53,8 @@ const Hero = () => {
               <Mail size={20} />
             </a>
             <a
-              href="/resume.pdf"
+              href="/Resume.pdf"
+download="Md_Mahedi_Hasan_Resume.pdf"
               className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-800 hover:bg-teal-500 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
             >
               <Download size={20} />
